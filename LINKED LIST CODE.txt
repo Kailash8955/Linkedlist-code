@@ -1,0 +1,61 @@
+LINKED LIST CODE with push back
+#include<bits/stdc++.h>
+using namespace std;
+class Node
+{
+ public:
+  int data;
+  Node* next;
+  
+  Node(int data)
+  {
+     this->data=data;
+     next=NULL;
+  }
+};
+class LinkedList
+{
+    public:
+    Node* head;
+    LinkedList()
+    {
+        head=NULL;
+    }
+    void push_back(int data)
+    {
+       Node* newnode=new Node(data);
+       if(head==NULL)
+       {
+           head=newnode;
+           return;
+       }
+       Node *curr=head;
+        while(curr->next!=NULL)
+        {
+            curr=curr->next;
+        }
+        curr->next=newnode;
+       
+           }
+           void display()
+           {
+               Node* curr=head;
+               while(curr!=NULL)
+               {
+                   cout<<curr->data<<"->";
+                   curr=curr->next;
+               }
+               cout<<"N"<<endl;
+           }
+};
+int main()
+{
+    LinkedList mylist;
+    mylist.push_back(1);
+    mylist.push_back(2);
+    mylist.push_back(3);
+    
+    mylist.display();
+    
+}
+=================================================================================================================================================================================
